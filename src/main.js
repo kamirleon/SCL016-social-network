@@ -3,3 +3,7 @@
 import { myFunction } from './lib/index.js';
 
 myFunction();
+const googleBtn = document.getElementById(googleLoggin)
+googleBtn.addEventListener('click', e =>{
+    console.log(click)
+})
