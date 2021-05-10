@@ -8,6 +8,7 @@ import { signUp } from './lib/view/1templateSignUp.js';
 
 
 
+
 //FUNCTION TO INIT OUR APP
 const init = () => {
     changeRoute(window.location.hash);
@@ -23,3 +24,8 @@ window.addEventListener('load', init)
 //googleBtn.addEventListener('click', e =>{
     //console.log(click)
 //})
+
+myFunction();
+
+// saber en que ruta de la app estoy ... home...login...post.. depedendiendo de este se llama al template y se pinta en index.html
+
