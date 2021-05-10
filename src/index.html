@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Quiere Tu Pet</title>
 </head>
+
 <body>
-  <header>
-    <!-- logo -->
-  </header>
+  <div id="root">
+    
+  </div>
+  <!-- FIREBASE SCRIPTS -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyD_XUt_1Hh4Hm6xHBbKQDhv-h-7u93Lvqg",
+      authDomain: "quiere-tu-pet-4ca57.firebaseapp.com",
+      projectId: "quiere-tu-pet-4ca57",
+      storageBucket: "quiere-tu-pet-4ca57.appspot.com",
+      messagingSenderId: "730223302298",
+      appId: "1:730223302298:web:5326dbb1253f17b5e3f123",
+      measurementId: "G-PMQBJ69XRZ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
-<div id="">
-  
- <!-- aqui pintamos dinámicamente desde las rutas.js  -->
-  
-
-</div>
-
-<footer>
-<!-- menu: home.. post...profile.. -->
-  </footer>
-
-<!-- agregar scritp de firebase  los tiene pao-->
+    //HELPING FIREBASE TO MANIPULATE AUTH
+    // const auth = firebase.auth(); //con esto el decimos lo que queremos validar
+  </script>
 
 
-
-
-
+  <!-- CUSTOM SCRIPTS -->
   <script type="module" src="main.js"></script>
 </body>
+
 </html>
