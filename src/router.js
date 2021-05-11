@@ -2,6 +2,7 @@
  import { createProfile } from './lib/view/2templateCreateProfile.js';
  import { signUp } from './lib/view/1templateSignUp.js';
  import { mailAndPass } from './lib/view/3templateMailandPass.js';
+ import { googleDirect } from './lib/view/4template4loginGoogle.js';
 
 
 export const changeRoute = (hash) => {
@@ -9,8 +10,10 @@ export const changeRoute = (hash) => {
         return showTemplate (hash) //en el caso de fanny ella uso hash para menu
     } else if (hash === '#/createProfile') {
         return showTemplate (hash)
+    } else if (hash === '#/loginGoogle') {
+        return showTemplate (hash)
     } else {
-        return showTemplate (hash) //para crear el error 404  
+        return showTemplate (hash) 
 
     }        
 
@@ -30,13 +33,20 @@ const showTemplate = (hash) => {
            })
             break;
         case '#/createProfile': 
-        containerRoot.innerHTML = ''
+            containerRoot.innerHTML = ''
             containerRoot.appendChild(createProfile());
+            document.getElementById('mailBtn1').addEventListener('click',() =>{
+            window.location.hash = '#/mailAndPass'
+            })
             break;
         case '#/mailAndPass':
             containerRoot.innerHTML = ''
             containerRoot.appendChild(mailAndPass());
             break;
+        case '#/loginGoogle':
+                containerRoot.innerHTML = ''
+                containerRoot.appendChild(googleDirect()); 
+            break;      
             default:
             containerRoot.innerHTML= '<h2>no existe<h2/>'
 
