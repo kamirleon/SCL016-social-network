@@ -46,7 +46,10 @@ const showTemplate = (hash) => {
         case '#/loginGoogle':
                 containerRoot.innerHTML = ''
                 containerRoot.appendChild(googleDirect()); 
-            break;      
+            break;     
+        case '#/home':
+            containerRoot.innerHTML = ''
+            containerRoot
             default:
             containerRoot.innerHTML= '<h2>no existe<h2/>'
 
