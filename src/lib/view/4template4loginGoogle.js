@@ -1,4 +1,6 @@
 import { startSignIn } from '../../Firebase/firebaseAuth.js';
+import { logGoogle } from '../../Firebase/firebaseAuth.js';
+
 export const googleDirect = () => {
     const divgoogleDirect = document.createElement('div');
     const viewgoogleDirect = `
@@ -15,11 +17,20 @@ export const googleDirect = () => {
     <button type="button" id="enterApp" class="enterApp">Enter</button>
     <div id='contenido'>   </div> 
     `
+
     divgoogleDirect.innerHTML = viewgoogleDirect;
   const showSome = divgoogleDirect.querySelector('#enterApp');
   showSome.addEventListener('click', () => {
-    startSignIn();
+    const email2 = document.getElementById('useMail').value;
+    const password2 = document.getElementById('password2').value;
+    startSignIn(email2, password2);
   });
+
+  const logginGoogle2 = divgoogleDirect.querySelector('#googleBtn2');
+  logginGoogle2.addEventListener('click', () =>{
+    logGoogle();
+  });
+
     
     return divgoogleDirect;
 }

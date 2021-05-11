@@ -11,6 +11,7 @@ import { signUp } from './lib/view/1templateSignUp.js';
 
 //FUNCTION TO INIT OUR APP
 const init = () => {
+    console.log(window.location.hash)
     changeRoute(window.location.hash);
     window.addEventListener('hashchange', () => {
    changeRoute(window.location.hash);
