@@ -1,17 +1,17 @@
 /* eslint-disable no-use-before-define */
 // aqui van los componentes que queremos que se vea, en el caso de fanny puso home, menu, personajes
-import { createProfile } from './lib/view/2templateCreateProfile.js';
+import { register } from './lib/view/2templateRegister.js';
 import { signUp } from './lib/view/1templateSignUp.js';
 import { mailAndPass } from './lib/view/3templateMailandPass.js';
-import { googleDirect } from './lib/view/4template4loginGoogle.js';
+import { login } from './lib/view/4template4login.js';
 import { home } from './lib/view/6templateHome.js';
 
 export const changeRoute = (hash) => {
   if (hash === '#/') {
     return showTemplate(hash); // en el caso de fanny ella uso hash para menu
-  } if (hash === '#/createProfile') {
+  } if (hash === '#/register') {
     return showTemplate(hash);
-  } if (hash === '#/loginGoogle') {
+  } if (hash === '#/login') {
     return showTemplate(hash);
   }
   return showTemplate(hash);
@@ -27,12 +27,12 @@ const showTemplate = (hash) => {
       containerRoot.innerHTML = '';
       containerRoot.appendChild(signUp());
       document.getElementById('spaBtnId').addEventListener('click', () => {
-        window.location.hash = '#/createProfile';
+        window.location.hash = '#/register';
       });
       break;
-    case '#/createProfile':
+    case '#/register':
       containerRoot.innerHTML = '';
-      containerRoot.appendChild(createProfile());
+      containerRoot.appendChild(register());
       document.getElementById('mailBtn1').addEventListener('click', () => {
         window.location.hash = '#/mailAndPass';
       });
@@ -41,9 +41,9 @@ const showTemplate = (hash) => {
       containerRoot.innerHTML = '';
       containerRoot.appendChild(mailAndPass());
       break;
-    case '#/loginGoogle':
+    case '#/login':
       containerRoot.innerHTML = '';
-      containerRoot.appendChild(googleDirect());
+      containerRoot.appendChild(login());
       break;
     case '#/home':
       containerRoot.innerHTML = '';

@@ -2,12 +2,12 @@ export const home = () => {
     const divhome = document.createElement('div');
     const viewhome = `
     <img src="/img/LOGOAPP.png" alt="">
-    <form> 
+    <form id="formPost" class="formPost"> 
         <fieldset>
 
              <legend>Nuevo Post</legend>
 
-                <p>
+                <p id="descriptionForm" class"descriptionForm">
 
                     Deja un mensaje:<br>
          
@@ -17,17 +17,17 @@ export const home = () => {
 
         </fieldset>
 
-         <button type="button" id="enviarPost" >Subir Post</button>
+         <button type="button" id="enviarPost">upload</button>
 
     </form>
     `;
 
     divhome.innerHTML = viewhome;
-    // const btnPost = document.querySelector('#enviarPost').addEventListener('click', () => {
+ const btnPost = divhome.querySelector('#enviarPost').addEventListener('click', () => {
 
-    //     const textPost = document.querySelector('#newPost').value;
-    //     console.log(textPost);
-    // });
+       const textPost = document.querySelector('#newPost').value;
+         console.log(textPost);
+     });
 
     return divhome;
 };

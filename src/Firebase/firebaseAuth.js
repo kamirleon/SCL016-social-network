@@ -15,7 +15,9 @@ export const createAccount = () => {
     });
 };
 //iniciar sesion con el usuario ya creado.
-export const startSignIn = (email2, password2) => {
+export const  startLogIn = () => {
+  const email2 = document.getElementById('useMail').value;
+    const password2 = document.getElementById('password2').value;
   console.log("entreeee");
   firebase
     .auth()
