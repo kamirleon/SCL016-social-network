@@ -4,7 +4,7 @@ import { register } from './lib/view/2templateRegister.js';
 import { signUp } from './lib/view/1templateSignUp.js';
 import { mailAndPass } from './lib/view/3templateMailandPass.js';
 import { login } from './lib/view/4template4login.js';
-import { home } from './lib/view/6templateHome.js';
+import { wall } from './lib/view/6templateWall.js';
 
 export const changeRoute = (hash) => {
   if (hash === '#/') {
@@ -45,9 +45,9 @@ const showTemplate = (hash) => {
       containerRoot.innerHTML = '';
       containerRoot.appendChild(login());
       break;
-    case '#/home':
+    case '#/wall':
       containerRoot.innerHTML = '';
-      containerRoot.appendChild(home());
+      containerRoot.appendChild(wall());
       break;
     default:
       containerRoot.innerHTML = '<h2>no existe<h2/>';

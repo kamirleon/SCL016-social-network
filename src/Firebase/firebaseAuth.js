@@ -15,16 +15,15 @@ export const createAccount = () => {
     });
 };
 //iniciar sesion con el usuario ya creado.
-export const  startLogIn = () => {
-  const email2 = document.getElementById('useMail').value;
-    const password2 = document.getElementById('password2').value;
+
+export const startLogIn = (email2, password2) => {
   console.log("entreeee");
   firebase
     .auth()
     .signInWithEmailAndPassword(email2, password2)
     .then(() => {
       // redirigir al home
-      window.location.hash = "#/home";
+      window.location.hash = "#/wall";
       // showmsn();
       // Signed in
       /*  const user = userCredential.user; */
