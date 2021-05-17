@@ -11,7 +11,7 @@ export const changeRoute = (hash) => {
     return showTemplate(hash); // en el caso de fanny ella uso hash para menu
   } if (hash === '#/register') {
     return showTemplate(hash);
-  } if (hash === '#/loginGoogle') {
+  } if (hash === '#/login') {
     return showTemplate(hash);
   }
   return showTemplate(hash);

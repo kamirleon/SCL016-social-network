@@ -15,6 +15,7 @@ export const createAccount = () => {
     });
 };
 //iniciar sesion con el usuario ya creado.
+
 export const startLogIn = (email2, password2) => {
   console.log("entreeee");
   firebase
