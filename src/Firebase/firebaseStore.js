@@ -1,20 +1,15 @@
 
+// funcion que guarda los post en firestore, es llamada en template 5
+export const savePost = (description) => {
+  const db = firebase.firestore();
+return db.collection('newPost').doc().set({
+  description
+  
+});
+}
 
-// const db = firebase.firestore();
-
-// const formPost = document.querySelector('#formPost');
-
-// const savePost = (description) =>
-// await db.collection('newPost').doc().set({
-//     description
-// })
-
-// formPost.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-
-//     const description = formPost['newPost'].value;
-
-//     console.log(description)
-
-// })
-
+// funcion que pinta en wall, los post guardados en firestore, llamada en template 5
+export const getPost = () => {
+  const db = firebase.firestore();
+  return db.collection('newPost').get()
+}

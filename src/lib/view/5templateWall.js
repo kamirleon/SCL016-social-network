@@ -1,5 +1,5 @@
 
-const db = firebase.firestore();
+import {getPost, savePost} from '../../Firebase/firebaseStore.js';
 
 export const wall = () => {
     const divWall = document.createElement('div');
@@ -23,27 +23,22 @@ export const wall = () => {
 
     `
     divWall.innerHTML = viewWall;
-    const postContainer = document.querySelector('#postContainer');
-
-
-    const savePost = (description) => 
-    db.collection('newPost').doc().set({
-      description
-    });
-
-    const getPost = () => db.collection('newPost').get();
-
-    window.addEventListener('DOMContentLoaded', async (e) => { 
-      const querySnapshot = await getPost();
-      querySnapshot.forEach(doc => {
+    const postContainer = divWall.querySelector('#postContainer');
+    
+    // se inicializa base de datos firestore
+    const db = firebase.firestore();
+    // se llama a funcion getPost, recorre la data de post y los pinta
+        getPost()
+      .then((querySnapshot)=>{
+        querySnapshot.forEach(doc => {
         console.log(doc.data())
         postContainer.innerHTML += ` <div>
         ${doc.data().description}
+        <button>Like</button>
         </div>`
-        
       })
-    })
-
+      }) 
+      // Guarda los post, resetea formulario
     const submitBtn =  divWall.querySelector('#sentBtn');
     submitBtn.addEventListener('click', async (e) => {
         e.preventDefault();
