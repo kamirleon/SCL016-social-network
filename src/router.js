@@ -4,7 +4,7 @@ import { register } from './lib/view/2templateRegister.js';
 import { signUp } from './lib/view/1templateSignUp.js';
 import { mailAndPass } from './lib/view/3templateMailandPass.js';
 import { login } from './lib/view/4template4login.js';
-import { wall } from './lib/view/6templateWall.js';
+import { wall } from './lib/view/5templateWall.js';
 
 export const changeRoute = (hash) => {
   if (hash === '#/') {
