@@ -1,21 +1,17 @@
-var db = firebase.firestore();
+// const db = firebase.firestore();
 
-db.collection("users").add({
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-})
-.then((docRef) => {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch((error) => {
-    console.error("Error adding document: ", error);
-});
+// const formPost = document.querySelector('#formPost');
 
-// const formPost = document.getElementById('descriptionForm');
-// formPost.addEventListener('click', e => {
-//     e.preventDefault();
-
+// const savePost = (description) =>
+// await db.collection('newPost').doc().set({
+//     description
 // })
 
-// const description = formPost.['descriptionForm'].value;
+// formPost.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+
+//     const description = formPost['newPost'].value;
+
+//     console.log(description)
+
+// })
