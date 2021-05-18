@@ -5,7 +5,7 @@ export const wall = () => {
     
     <form action="">
     <legend>Nuevo Post</legend>
-    <textarea id="newPost" cols="30" rows="10"></textarea>
+    <textarea id="containerPost" cols="30" rows="10"></textarea>
 
     <button id="sentBtn" class="sentBtn">Subir Post</button>
 
@@ -17,8 +17,9 @@ export const wall = () => {
     const submitBtn =  divWall.querySelector('#sentBtn');
     submitBtn.addEventListener('click', () => {
 
-        let post = document.querySelector('#newPost').value;
-        console.log(post)
+        let description = document.querySelector('#containerPost').value;
+        console.log(description)
+       
     });
 
     return divWall;
