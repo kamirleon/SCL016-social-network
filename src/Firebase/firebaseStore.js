@@ -9,7 +9,7 @@ return db.collection('newPost').doc().set({
 }
 
 // funcion que pinta en wall, los post guardados en firestore, llamada en template 5
-export const getPost = () => {
+export const getPosts = () => {
   const db = firebase.firestore();
   return db.collection('newPost').get()
 }
