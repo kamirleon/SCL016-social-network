@@ -5,9 +5,9 @@ export const mailAndPass = () => {
     <img src="/img/LOGOAPP.png" alt="">
     <form id="signForm" class="signUpForm">
       <p class="penterMail">ENTER YOUR MAIL</p>
-      <input type="mail" id="enterMail" class="enterMail" placeholder="quieretupet@gmail.com">
+      <input type="mail" id="enterMail" class="enterMail" placeholder="quieretupet@gmail.com" required>
       <p id="enterPass" class="enterPass">ENTER YOUR password</p>
-      <input type="password" id="password" class="password" placeholder="...........">
+      <input type="password" id="password" class="password" placeholder="..........." required>
     </form>
     <p>YOUR PASSWORD MUST HAVE</p>
     <ul>
