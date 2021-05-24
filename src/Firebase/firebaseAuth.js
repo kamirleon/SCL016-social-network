@@ -7,6 +7,8 @@ export const createAccount = () => {
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       console.log("sign up");
+      alert('Your register is done')
+      window.location.hash = "#/login";
     })
     .catch((error) => {
       var errorCode = error.code;
@@ -47,6 +49,7 @@ export const logGoogle = () => {
     .then((result) => {
       /** @type {firebase.auth.OAuthCredential} */
       var credential = result.credential;
+      window.location.hash = "#/wall";
       
 
       // This gives you a Google Access Token. You can use it to access the Google API.

@@ -13,3 +13,5 @@ export const getPosts = () => {
   const db = firebase.firestore();
   return db.collection('newPost').get()
 }
+
+

@@ -67,7 +67,8 @@ export const wall = () => {
           const btnDelete = document.querySelectorAll('.btnDelete');
           btnDelete.forEach(btn => {
             btn.addEventListener('click', async (e) => {
-              console.log(e.target.dataset.id) // nos imprime el id de cada post 
+              console.log(e.target.dataset.id) // nos imprime el id de cada post
+              confirm('are you sure of delete this post') 
               await deletePost(e.target.dataset.id)
             })
           })
@@ -103,6 +104,10 @@ export const wall = () => {
 
     let description = document.querySelector('#newPost');
     const form = document.querySelector('#formPost');
+    if (!description.value){
+      alert('this input cannot empty')
+    return 
+    }
     // si el editStatus es diferente a como se declaro al inicio has esto.. llama a savePost 
     if (!editStatus) {
       await savePost(description.value);
