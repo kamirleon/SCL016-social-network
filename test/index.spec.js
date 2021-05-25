@@ -7,4 +7,3 @@ describe('Primer test de prueba', () => {
     expect(typeof savePost).toBe('function');
   });
 });
-

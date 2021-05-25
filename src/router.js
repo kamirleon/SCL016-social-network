@@ -50,10 +50,6 @@ const showTemplate = (hash) => {
       containerRoot.innerHTML = '';
       containerRoot.appendChild(wall());
       break;
-      case '#/signUp':
-      containerRoot.innerHTML = '';
-      containerRoot.appendChild(signUp());
-      break;
     default:
       containerRoot.innerHTML = '<h2>no existe<h2/>';
       break;

@@ -6,8 +6,6 @@ export const createAccount = () => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      alert('Registro exitoso!')
-      window.location.hash = "#/login";
       console.log("sign up");
       alert('Your register is done')
       window.location.hash = "#/login";
@@ -53,7 +51,6 @@ export const logGoogle = () => {
       var credential = result.credential;
        // redirigir al wall
       window.location.hash = "#/wall";
-
 
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = credential.accessToken;
