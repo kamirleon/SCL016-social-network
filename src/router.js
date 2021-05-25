@@ -24,6 +24,7 @@ const showTemplate = (hash) => {
   // vamos hacer un switch par acada caso de hash
   switch (hash) {
     case '#/signUp':
+      case '':
       containerRoot.innerHTML = '';
       containerRoot.appendChild(signUp());
       document.getElementById('spaBtnId').addEventListener('click', () => {
