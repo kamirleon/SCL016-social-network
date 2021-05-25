@@ -10,22 +10,23 @@ export const wall = () => {
     <button id="sentBtn" class="sentBtn">Subir Post</button>
   </form> 
   <div id="postContainer">
-  
+
   
   </div>
     `
   divWall.innerHTML = viewWall;
   const postContainer = divWall.querySelector('#postContainer');
-
+  
   // se inicializa base de datos firestore
   const db = firebase.firestore();
   // estado inicial de boton editar tipo boolean 
   let editStatus = false;
   let id = '';
-
+  
   // Para crear la primera coleccion 
   const getPost = (id) => db.collection('newPost').doc(id).get();
-
+  
+  
   // se llama a funcion getPost, recorre la data de post y los pinta
   getPosts()
     .then((querySnapshot) => {
@@ -118,6 +119,6 @@ export const wall = () => {
     // console.log(description);
 
   });
-
+  
   return divWall;
 }
