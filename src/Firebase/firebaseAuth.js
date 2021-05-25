@@ -6,6 +6,8 @@ export const createAccount = () => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
+      alert('Registro exitoso!')
+      window.location.hash = "#/login";
       console.log("sign up");
       alert('Your register is done')
       window.location.hash = "#/login";
@@ -35,10 +37,10 @@ export const startLogIn = (email2, password2) => {
     .catch((error) => {});
 };
 
-export const aparece = (user) => {
-  const contenido = document.getElementById("contenido");
-  contenido.innerHTML = "solo lo ve usuario activo";
-};
+
+  // const contenido = document.getElementById("contenido");
+  // contenido.innerHTML = "solo lo ve usuario activo";
+// };
 
 // funcion para acceder con google
 export const logGoogle = () => {
@@ -49,8 +51,9 @@ export const logGoogle = () => {
     .then((result) => {
       /** @type {firebase.auth.OAuthCredential} */
       var credential = result.credential;
+       // redirigir al wall
       window.location.hash = "#/wall";
-      
+
 
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = credential.accessToken;
@@ -69,3 +72,22 @@ export const logGoogle = () => {
       // ...
     });
 };
+
+// observador de usuario
+// export const aparece = (user) => {
+//   if(user.emailVerified){
+//     window.open('#/', '_self');
+//   }
+// };
+
+// export const detectUser = () => {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       // User is signed in.
+//       aparece(user);
+//     } else {
+//       // No user is signed in
+//       window.open('#/', '_self');
+//     }
+//   });
+// };
