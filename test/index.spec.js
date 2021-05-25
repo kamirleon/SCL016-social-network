@@ -1,8 +1,10 @@
 // importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+import {savePost} from '../src/Firebase/firebaseStore.js';
 
-describe('myFunction', () => {
+
+describe('Primer test de prueba', () => {
   it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+    expect(typeof savePost).toBe('function');
   });
 });
+

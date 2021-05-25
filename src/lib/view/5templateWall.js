@@ -26,14 +26,6 @@ export const wall = () => {
   // Para crear la primera coleccion 
   const getPost = (id) => db.collection('newPost').doc(id).get();
 
-  // // Mostrar post en tiempo real(onSnapshot)
-  // const onGetPost = (callback) => db.collection('newPost').onSnapshot(callback);
-
-  // // Eliminar post
-  // const deletePost = id => db.collection('newPost').doc(id).delete();
-
-  // // Actualizar el post con boton edit
-  // const updatePost = (id, updatePost) => db.collection('newPost').doc(id).update(updatePost);
 
   // se llama a funcion getPost, recorre la data de post y los pinta
   getPosts()
