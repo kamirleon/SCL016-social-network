@@ -42,7 +42,7 @@ export const wall = () => {
           postContainer.innerHTML += ` 
           <div>
           <div id="user" class="user">
-          <h2> Aqui va el correo del usuario</h2>
+          <h2> ${post.user}</h2>
           </div>
           <div>
           <h3>${post.description}</h3>
