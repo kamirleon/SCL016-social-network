@@ -1,7 +1,6 @@
 import {signUp} from '../src/lib/view/1templateSignUp.js';
 import { register } from '../src/lib/view/2templateRegister.js';
 import { mailAndPass } from '../src/lib/view/3templateMailandPass.js';
-
 describe('html prueba', () => {
   it('debería ser un hmtl', () => {
     const htmlTemplate1 = signUp();
