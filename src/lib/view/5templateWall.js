@@ -27,6 +27,8 @@ export const wall = () => {
   const getPost = (id) => db.collection('newPost').doc(id).get();
   
   
+
+
   // se llama a funcion getPost, recorre la data de post y los pinta
   getPosts()
     .then((querySnapshot) => {
@@ -42,7 +44,7 @@ export const wall = () => {
           postContainer.innerHTML += ` 
           <div>
           <div id="user" class="user">
-          <h2> Aqui va el correo del usuario</h2>
+          <h2> ${post.user}</h2>
           </div>
           <div>
           <h3>${post.description}</h3>
