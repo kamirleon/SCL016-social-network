@@ -2,7 +2,6 @@ import { startLogIn } from '../src/Firebase/firebaseAuth.js';
 import {signUp} from '../src/lib/view/1templateSignUp.js';
 import { register } from '../src/lib/view/2templateRegister.js';
 
-
 describe('html prueba', () => {
   it('debería ser un hmtl', () => {
     const htmlTemplate1 = signUp();
