@@ -6,8 +6,6 @@ export const createAccount = () => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      alert('Registro exitoso!')
-      window.location.hash = "#/login";
       console.log("sign up");
       alert('Your register is done')
       window.location.hash = "#/login";

@@ -3,6 +3,7 @@ const db = firebase.firestore();
 // funcion que guarda los post en firestore, es llamada en template 5
 export const savePost = (description) => {
 return db.collection('newPost').doc().set({
+  user: firebase.auth().currentUser.email,
   description
 });
 }

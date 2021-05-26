@@ -1,27 +1,29 @@
-// importamos la funcion que vamos a testear
-import MockFirebase from 'mock-cloud-firestore';
-global.firebase = new MockFirebase(fixtureData);
-import { savePost } from '../src/Firebase/firebaseStore.js';
+// import MockFirebase from 'mock-cloud-firestore';
 
-const fixtureData = {
-  __collection__: {
-    notes: {
-      __doc__: {
-        abc123: {
-          title: 'terminar la pildora', 
-        },
-      }
-    }
-  }
-}
+// const fixtureData = {
+//   __collection__: {
+//     notes: {
+//       __doc__: {
+//         abc123: {
+//           title: 'terminar la pildora',
+//         },
+//         abc125: {
+//           title: 'Comprar trufas',
+//         },
+//       }
+//     }
+//   }
+// }
 
-global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
+// global.firebase = MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true});
 
-describe('savePost', () => {
-  it('primer testeo, () => {
-    return savePost().then(()=>{
-      expect(typeof myFunction).toBe('function');
-    })
-    
-  });
-});
+// import { savePost } from '../src/Firebase/firebaseStore.js';
+
+// describe('Primer test de prueba', () => {
+//   it('debería ser una función', () => {
+//     return savePost('comprar pan').then((data)=>{
+//       console.log(data)
+//     expect(data).toBe('la nota fue agregada');
+//     })
+//   });
+// });
