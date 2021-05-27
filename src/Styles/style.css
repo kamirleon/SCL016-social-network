@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap')
 
-* {
+*{
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 /* signUp template */
@@ -52,3 +54,88 @@
 }
 
 /* Register Template */
+.container1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     
+}
+.welcome{
+    font-family: 'Teko', sans-serif;
+    color:#8c8787;
+    font-size: 10px;
+   
+}
+
+.logoApp{
+    background-image: url(./img/LOGOAPP.png);
+    width: 300px; 
+    height: 300px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.creatProfile{
+    font-family: 'Sunflower', sans-serif ;
+    margin: 10px;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+}
+
+.googleBtn1{
+    text-decoration: none;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    background-color: #E8DDFF;
+    border-radius: 6px;
+    border: 2px solid #c499f5;
+    display: block;
+    text-align: center;
+
+}
+
+
+.googleLogo{
+    position: absolute;
+    width: 18px;
+}
+
+.mailBtn1{
+    text-decoration: none;
+    padding: 10px;
+    text-decoration: none;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    margin: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FEFFDC;
+    border-radius: 6px;
+    border: 2px solid #f5f573;
+    display: block;
+    text-align: center;
+ 
+}
+    
+    
+   
+
+  
+
+    
+
+
+
+
+
+
