@@ -20,7 +20,7 @@ export const createAccount = () => {
 
 export const startLogIn = (email2, password2) => {
   console.log("entreeee");
-  firebase
+  return firebase
     .auth()
     .signInWithEmailAndPassword(email2, password2)
     .then(() => {
@@ -33,6 +33,7 @@ export const startLogIn = (email2, password2) => {
       // ...
     })
     .catch((error) => {});
+    
 };
 
 
