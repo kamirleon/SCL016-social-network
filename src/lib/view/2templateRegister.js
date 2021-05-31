@@ -14,8 +14,9 @@ export const register = () => {
   </div>
   </section>   
     `
-  //SE CAPTURA BOTON Y SE LLAMA A FUNCION PARA ACCEDER CON GOOGLE
   divRegister.innerHTML = viewRegister
+  
+  //SE CAPTURA BOTON Y SE LLAMA A FUNCION PARA ACCEDER CON GOOGLE
   const logginGoogle = divRegister.querySelector('#googleBtn1');
   logginGoogle.addEventListener('click', () =>{
     logGoogle();

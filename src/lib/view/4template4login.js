@@ -3,9 +3,11 @@ import { logGoogle } from '../../Firebase/firebaseAuth.js';
 export const  login = () => {
     const divLogin = document.createElement('div');
     const viewLogin = `
-    <img src="/img/LOGOAPP.png" alt="">
+    <section class="container3">
+    <img class="logoApp"src="/img/LOGOAPP.png" alt="">
+    <div class="div4">
     <form id="logIn" class="logIn">
-      <p class="penterMail">Login</p>
+      <p class="pLogin">Login</p>
       <button type="button" id="googleBtn2" class="googleBtn2">Continue with google</button> 
       <p id="checkIn" class="checkIn">Check In</p>
       <input type="mail" id="useMail" class="useMail" placeholder="use your mail" required>
@@ -13,7 +15,9 @@ export const  login = () => {
       <input type="password" id="password2" class="password22" placeholder="..........." required>
     </form>
     <button type="button" id="enterApp" class="enterApp">Enter</button>
+    </div>
     <div id='contenido'>   </div> 
+    </section>
     `
     divLogin.innerHTML = viewLogin;
   const showLogin = divLogin.querySelector('#enterApp');
