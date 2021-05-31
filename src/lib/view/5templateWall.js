@@ -3,21 +3,21 @@ import { getPosts, savePost, onGetPost, deletePost, updatePost } from '../../Fir
 export const wall = () => {
   const divWall = document.createElement('div');
   const viewWall = ` 
-  <header>
+<header>
   <div class="container"></div>
   <div class="imgLogo">
   <img src="img/LOGOAPP.png" alt="">
   </div>
 </header>
 <div class="container">
-  <br>
+  
   <form id="formPost" class="">
     <fieldset>
       <div class="form-group">
         <legend>Nuevo Post</legend>
         <textarea name="" id="newPost" class="form-control" cols="30" rows="10"></textarea>
       </div>
-      <br>
+      
       <div class="btn-group">
       <label for="boton"></label>
       <button id="sentBtn" class="btn btn-primary">Subir Post</button>
@@ -25,7 +25,7 @@ export const wall = () => {
     </fieldset>
   </form>
 </div>
-<div id="postContainer">
+<div id="postContainer" class="container">
 </div>
     `
   divWall.innerHTML = viewWall;
