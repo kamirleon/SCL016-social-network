@@ -3,30 +3,42 @@ import { getPosts, savePost, onGetPost, deletePost, updatePost } from '../../Fir
 export const wall = () => {
   const divWall = document.createElement('div');
   const viewWall = ` 
-    <img src="/img/LOGOAPP.png" alt="">
-    <form id="formPost">
-    <legend>Nuevo Post</legend>
-    <textarea id="newPost" cols="30" rows="10"></textarea>
-    <button id="sentBtn" class="sentBtn">Subir Post</button>
-  </form> 
-  <div id="postContainer">
-
-  
+<header>
+  <div class="container"></div>
+  <div class="imgLogo">
+  <img src="img/LOGOAPP.png" alt="">
   </div>
+</header>
+<div class="container">
+  
+  <form id="formPost" class="">
+    <fieldset>
+      <div class="form-group">
+        <legend>Nuevo Post</legend>
+        <textarea name="" id="newPost" class="form-control" cols="30" rows="10"></textarea>
+      </div>
+      
+      <div class="btn-group">
+      <label for="boton"></label>
+      <button id="sentBtn" class="btn btn-primary">Subir Post</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div id="postContainer" class="container">
+</div>
     `
   divWall.innerHTML = viewWall;
   const postContainer = divWall.querySelector('#postContainer');
-  
+
   // se inicializa base de datos firestore
   const db = firebase.firestore();
   // estado inicial de boton editar tipo boolean 
   let editStatus = false;
   let id = '';
-  
+
   // Para crear la primera coleccion 
   const getPost = (id) => db.collection('newPost').doc(id).get();
-  
-  
 
 
   // se llama a funcion getPost, recorre la data de post y los pinta
@@ -42,29 +54,33 @@ export const wall = () => {
           post.id = doc.id;
           // template donde se pintan los post
           postContainer.innerHTML += ` 
-          <div>
-          <div id="user" class="user">
-          <h2> ${post.user}</h2>
+          <div class="container">
+          <br>
+          <div class="row">
+            <div class="col md-4">
+              <ul>
+                <li class="list-group-item">
+                  <h4> Pet: ${post.user}</h4>
+                  <p>${post.description}</p>
+                  <button id="btnEdit" class="btn btn-secondary" data-id="${post.id}">Edit</button>
+                  <button id="btnDelete" class="btn btn-secondary" data-id="${post.id}">Delete</button>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-          <h3>${post.description}</h3>
-          </div>
-          <button>Like</button>
-          <button id="btnEdit" class="btnEdit" data-id="${post.id}">Edit</button>
-          <button id="btnDelete" class="btnDelete" data-id="${post.id}">Delete</button>
-          </div>
+        </div>
           `
           // se captura btn, traeme todos los btn que tengan este id
-          const btnDelete = document.querySelectorAll('.btnDelete');
+          const btnDelete = document.querySelectorAll('#btnDelete');
           btnDelete.forEach(btn => {
             btn.addEventListener('click', async (e) => {
               console.log(e.target.dataset.id) // nos imprime el id de cada post
-              confirm('are you sure of delete this post') 
+              confirm('are you sure of delete this post')
               await deletePost(e.target.dataset.id)
             })
           })
           // se captura btn edit, trameme todos los btn con este id
-          const btnEdit = document.querySelectorAll('.btnEdit');
+          const btnEdit = document.querySelectorAll('#btnEdit');
           btnEdit.forEach(btn => {
             btn.addEventListener('click', async (e) => {
               console.log('editando')
@@ -92,12 +108,11 @@ export const wall = () => {
   const submitBtn = divWall.querySelector('#sentBtn');
   submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
-
     let description = document.querySelector('#newPost');
     const form = document.querySelector('#formPost');
-    if (!description.value){
+    if (!description.value) {
       alert('this input cannot empty')
-    return 
+      return
     }
     // si el editStatus es diferente a como se declaro al inicio has esto.. llama a savePost 
     if (!editStatus) {
@@ -121,6 +136,6 @@ export const wall = () => {
     // console.log(description);
 
   });
-  
+
   return divWall;
 }

@@ -32,14 +32,9 @@ export const startLogIn = (email2, password2) => {
 
       // ...
     })
-    .catch((error) => {});
-    
+    .catch((error) => { });
+
 };
-
-
-  // const contenido = document.getElementById("contenido");
-  // contenido.innerHTML = "solo lo ve usuario activo";
-// };
 
 // funcion para acceder con google
 export const logGoogle = () => {
@@ -50,7 +45,7 @@ export const logGoogle = () => {
     .then((result) => {
       /** @type {firebase.auth.OAuthCredential} */
       var credential = result.credential;
-       // redirigir al wall
+      // redirigir al wall
       window.location.hash = "#/wall";
 
 
